@@ -1,0 +1,52 @@
+.animation-wrapper {
+  position: relative;
+  height: 60vh;
+  min-height: 320px;
+  background: transparent;
+  overflow: visible;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.robot-hand, .human-hand {
+  position: absolute;
+  width: 180px;
+  max-width: 40vw;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.robot-hand {
+  top: -80px;
+  left: -80px;
+}
+
+.human-hand {
+  bottom: -80px;
+  right: -80px;
+}
+
+.center-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  max-width: 22vw;
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 20;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(.4,2,.6,1);
+}
+
+@media (max-width: 768px) {
+  .robot-hand, .human-hand {
+    width: 90px;
+  }
+  .center-logo {
+    width: 60px;
+  }
+  .animation-wrapper {
+    min-height: 180px;
+    height: 32vh;
+  }
+}

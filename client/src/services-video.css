@@ -1,0 +1,131 @@
+.services-video-bg {
+  position: relative;
+  width: 100vw;
+  min-height: 60vh;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.services-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  background: #000;
+  pointer-events: none;
+}
+
+/* Dark animated edges using pseudo-elements */
+.services-video-bg::before,
+.services-video-bg::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 100px;
+  width: 100vw;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.7s;
+}
+.services-video-bg::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 70%, transparent 100%);
+  
+  animation: fadeEdgeTop 3s infinite alternate;
+}
+.services-video-bg::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 70%, transparent 100%);
+  animation: fadeEdgeBottom 3s infinite alternate;
+}
+
+@keyframes fadeEdgeTop {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+@keyframes fadeEdgeBottom {
+  0% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* Quote animation */
+.services-quote {
+  z-index: 2;
+  max-width: 90vw;
+  animation: quoteFadeInLeft 1.2s cubic-bezier(.4,2,.6,1);
+  opacity: 1;
+}
+@keyframes quoteFadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .services-video-bg,
+  .services-bg-video {
+    min-height: 50vh;
+    height: 60vh;
+  }
+  .services-video-bg::before,
+  .services-video-bg::after {
+    height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-video-bg,
+  .services-bg-video {
+    min-height: 35vh;
+    height: 40vh;
+  }
+  .services-video-bg::before,
+  .services-video-bg::after {
+    height: 40px;
+  }
+  .services-quote {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.7rem;
+    max-width: 96vw;
+  }
+}
+
+/* Stylish quote text */
+.services-quote {
+  z-index: 2;
+  max-width: 90vw;
+  animation: quoteFadeInLeft 1.2s cubic-bezier(.4,2,.6,1);
+  opacity: 1;
+ 
+  font-size: 1.5rem;
+  font-style: bold;
+  color: #fff;
+ 
+  border-left: 6px solid #0f0f0f;
+  
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 8px #222;
+}
+
+.services-quote h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #fff;
+  line-height: 1.3;
+}
+
