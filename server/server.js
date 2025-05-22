@@ -21,7 +21,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://your-frontend.vercel.app", // <-- Replace with your actual frontend domain after deploy
+      "https://digitornix.vercel.app/", // <-- Replace with your actual frontend domain after deploy
     ],
     credentials: true,
   })
