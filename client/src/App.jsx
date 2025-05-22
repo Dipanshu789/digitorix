@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 // Pages
 import Home from "./pages/Home";
-import About from "./pages/about";
+import About from "./pages/About";
 import Services from "./pages/Services";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
